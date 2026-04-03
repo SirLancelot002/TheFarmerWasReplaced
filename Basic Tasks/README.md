@@ -101,6 +101,10 @@ Anything sped up by power also uses power proportional to the time it takes to e
 The most effective way to do this is to work in waves. I've experimented with replanting the harvested flowers straightaway, but that took more time because I had to wait for them to grow again if the new flower had the most petals. Instead, I `measure()` the whole field, put everything in a dictionary, where the key is the number of petals, and the value is a list of coordinates where those sunflowers were found. Then it works its way backward and collects them. Replant, and do again.
 <img width="1164" height="746" alt="image" src="https://github.com/user-attachments/assets/3f64ba5e-df82-4ff3-8b1f-72430c0ed1a2" />
 
+Also, I've submitted my code for the global leaderboard, and I've reached rank #73 from multiple hundred people.
+![Sunflower_Single_Leaderboard](https://github.com/user-attachments/assets/b79af748-e4fd-4d96-9190-462c6812ce89)
+
+
 </details>
 
 <details>
@@ -120,22 +124,14 @@ You can also pass a direction into `measure(direction)` to measure the neighbori
 You can swap a cactus with its neighbor in any direction using the `swap()` command.
 `swap(direction)` swaps the object under the drone with the object one tile in the direction of the drone.
 
-In each of these grids, all the cacti are in sorted order and the harvest will spread over the entire field:
-3 4 5    3 3 3    1 2 3    1 5 9
-2 3 4    2 2 2    1 2 3    1 3 8
-1 2 3    1 1 1    1 2 3    1 3 4
+<img width="854" height="392" alt="image" src="https://github.com/user-attachments/assets/c6285e1a-de54-44c8-826e-18576db1aac5" />
 
-In this grid, only the lower left cactus is in sorted order, which is not enough for it to spread:
-1 5 3
-4 9 7
-3 3 2
 
-In short: The cacti has to be sorted, so the largest ones are on the east or north. We cannot insert, so the logical answer for the fastest algorithm is the **improved bubble sort**.
+In short: The cacti have to be sorted, so the largest ones are on the east or north. We cannot insert, so the logical answer for the fastest algorithm is the **improved bubble sort**.
 <img width="1616" height="994" alt="image" src="https://github.com/user-attachments/assets/6d388dce-34e1-4ee8-a604-84356929cb1d" />
 
-I've also submitted my algorithm to the global leaderbord, and it got rank #127. (The best 300 are visible, so there were at least that many people who tired).
+I've also submitted my algorithm to the global leaderboard, and it got rank #127. (The best 300 are visible, so there were at least that many people who tried).
 ![Cactus_Single_Leaderboard](https://github.com/user-attachments/assets/90337f4e-a84f-439f-afe3-2cb603008ead)
-
 
 </details>
 
