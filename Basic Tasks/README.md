@@ -26,8 +26,8 @@ The only difficulty increase compared to the grass is that bushes need to be pla
 
 Trees are the first plants the player hes to think about for a second. To quote from the game:
 > **Trees** are a better way to get wood than bushes. They give 5 wood each. Like bushes, they can be planted on grass or soil.
+Trees like to have some space and planting them right next to each other will slow down their growth. The growing time is doubled for each tree that is on a tile directly to the north, east, west or south of it. So if you plant trees on every tile, they will take 2*2*2*2 = 16 times longer to grow.
 
-> Trees like to have some space and planting them right next to each other will slow down their growth. The growing time is doubled for each tree that is on a tile directly to the north, east, west or south of it. So if you plant trees on every tile, they will take 2*2*2*2 = 16 times longer to grow.
 This means that you want to plant them in a checker board formation to maximalize growth time. (You will need it this time).
 
 </details>
