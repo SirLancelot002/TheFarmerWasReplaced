@@ -35,7 +35,7 @@ In short, the most efficient way to complete the maze is to map it once, then re
 ## How my code works.
 The drone starts from the middle of the maze, since this gives it the best chance to be closer to the treasure. Then it's trying to go in the rough direction of the chest, mapping the tiles it goes over.
 It notes that the mapped tile has connections to which tiles. This goes on until it reaches a deadend. At which point, it calculates the closest tile to the chest it knows the way to. Goes there, then continues exploring.
-This can only end up with the drone on the chest. It reuses the maze, then repeats 300 times.
+This can only end up with the drone on the chest. It reuses the maze, then repeats 300 times. A constant is always decreasing; if the planned route to the target is longer than the minimal route length multiplied by the constant, then on its way, the drone re-explores the path in case there is a shorter route.
 
 ## `InfiniteMazeRunner.py`
 It does exactly as I wrote above, until it runs out of resources. On the largest map it takes about 30 minutes to finish but is very satisfying to watch.
@@ -48,6 +48,5 @@ I've also entered this code into the global leaderboard and got rank #40. 🥳 *
 It was for debugging; if I just want to finish the maze, not to wait until the very end, it does it in a max of 30 seconds.
 
 ## `MultiMaze32x32`
-I made it to work with multiple drones. The mazes can only be squares, so I had to make some choices. I want 16 drones instead of 32 because I could not get them in a nice order, and if I have just one large maze, that's going to slow the whole thing down, so there is no point in making just some mazes smaller. Otherwise, they function identically to the large maze solver.
+I made it to work with multiple drones. The mazes can only be squares, so I had to make some choices. I want 16 drones instead of 32 because I could not get them in a nice order, and if I have just one large maze, that's going to slow the whole thing down, so there is no point in making just some mazes smaller. Otherwise, they function identically to the large maze solver. The starting positions of the smaller mazes were optimized in order so the drones won't have to wait for each other.
 <img width="1303" height="1039" alt="image" src="https://github.com/user-attachments/assets/8abe52a9-a54d-4b7d-931e-8db85b50c63b" />
-[![Watch the video](thumbnail.png)](MultiMazeRun.mp4)
