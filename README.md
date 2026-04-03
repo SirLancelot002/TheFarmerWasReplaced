@@ -1,7 +1,7 @@
 # TheFarmerWasReplaced
 
 I made this repository for the game "**The Farmer was replaced**". I've collected my solutions for all tasks in the game.
-Just a short introduction for the game (in case you don't know it): This game teaches you the basics of programming. You start with calling the ```harvest()``` function, then unlock loops so you don't have to start the script every time manually, then the next crops become more complex to plant or harvest, and at the end of the game you can make 32 drones simultaneously solve 32 different mazes, 300 times over.
+Just a short introduction for the game (in case you don't know it): This game teaches you the basics of programming. You start with calling the ```harvest()``` function, then unlock loops so you don't have to start the script every time manually, then the next crops become more complex to plant or harvest, and at the end of the game you can make 32 drones simultaneously solve 32 different mazes, 300 times over. It's useful to know that the game is trying to force you to write efficient code by having a mathematical action cost one tick and movement and harvesting (anything physical) 200 ticks. By default, 200 ticks is one second. My user name is ***Argentin_Marosvarics*** (just for reference for some photos).
 <img width="2559" height="1079" alt="image" src="https://github.com/user-attachments/assets/00088b22-f6b6-402c-8d33-fc9eff9035e4" />
 
 
