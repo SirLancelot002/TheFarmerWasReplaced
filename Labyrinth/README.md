@@ -50,3 +50,4 @@ It was for debugging; if I just want to finish the maze, not to wait until the v
 ## `MultiMaze32x32`
 I made it to work with multiple drones. The mazes can only be squares, so I had to make some choices. I want 16 drones instead of 32 because I could not get them in a nice order, and if I have just one large maze, that's going to slow the whole thing down, so there is no point in making just some mazes smaller. Otherwise, they function identically to the large maze solver.
 <img width="1303" height="1039" alt="image" src="https://github.com/user-attachments/assets/8abe52a9-a54d-4b7d-931e-8db85b50c63b" />
+[![Watch the video](thumbnail.png)](MultiMazeRun.mp4)
