@@ -48,12 +48,12 @@ This means that you want to plant them in a checkerboard formation to maximize g
 When all the pumpkins in a square are fully grown, they will grow together to form a giant pumpkin. Unfortunately, pumpkins have a 20% chance of dying once they are fully grown, so you will need to replant the dead ones if you want them to merge. 
 When a pumpkin dies, it leaves behind a dead pumpkin that won't drop anything when harvested. Planting a new plant in its place automatically removes the dead pumpkin, so there is no need to harvest it. `can_harvest()` always returns False on dead pumpkins.
 The yield of a giant pumpkin depends on the size of the pumpkin.
-A 1x1 pumpkin yields 1*1*1 = 1 pumpkins.
-A 2x2 pumpkin yields 2*2*2 = 8 pumpkins instead of 4.
-A 3x3 pumpkin yields 3*3*3 = 27 pumpkins instead of 9.
-A 4x4 pumpkin yields 4*4*4 = 64 pumpkins instead of 16.
-A 5x5 pumpkin yields 5*5*5 = 125 pumpkins instead of 25.
-A nxn pumpkin yields n*n*6 pumpkins for n >= 6.
+A 1x1 pumpkin yields 1x1x1 = 1 pumpkins.
+A 2x2 pumpkin yields 2x2x2 = 8 pumpkins instead of 4.
+A 3x3 pumpkin yields 3x3x3 = 27 pumpkins instead of 9.
+A 4x4 pumpkin yields 4x4x4 = 64 pumpkins instead of 16.
+A 5x5 pumpkin yields 5x5x5 = 125 pumpkins instead of 25.
+A nxn pumpkin yields nxnx6 pumpkins for n >= 6.
 It's a good idea to get at least 6x6 size pumpkins to get the full multiplier. 
 This means that even if you plant a pumpkin on every tile in a square, one of the pumpkins may die and prevent the mega pumpkin from growing.
 
@@ -67,7 +67,15 @@ Otherwise, I just store the whole field in the drone's memory, and after it know
 <details>
 <summary>Polyculture</summary>
 
-Hidden content here
+> You may have already noticed that sometimes plants yield more when planted together.
+Grass, bushes, trees, and carrots yield more when they have the right plant companion. Companion preference is different for each individual plant and cannot be predicted. Fortunately, the companion preference of the plant under the drone can be measured using `get_companion()`. It returns a tuple where the first element is the type of plant it wants as its companion and the second element is the position where it wants its companion.
+`plant_type, (x, y) = get_companion()`
+For example if you plant a bush and then call `get_companion()` it will return something like `(Entities.Carrot, (3, 5))`. This means that this bush would like to have carrots at the position (3,5). So if you plant carrots at (3,5) and then harvest the bush, it will yield more wood. The growth stage of the carrot doesn't matter.
+A plant's companion preference can be either `Entities.Grass`, `Entities.Bush`, `Entities.Tree` or `Entities.Carrot`. Each plant chooses this randomly, but it will always choose a different plant than itself. The position can also be any position within 3 moves of the plant except the position of the plant itself.
+If there is no plant under the drone that has a companion preference `get_companion()` will return None.
+Before polyculture is unlocked, the yield multiplier is 5. It doubles everytime you upgrade it.
+
+I'd add to the dev's description that a plant cannot have a companion that is the same type as it is. Otherwise, I can't add anything smart to this. I made it random what the drone plants at the spot, then goes through the whole map; if the plant has its companion, it is harvested; otherwise, it gets its companion. *In case you are wondering: No, if **plant X** wants **plant Y** as its companion, that does not mean that **Plant Y** wants **Plant X** as its companion.*
 
 </details>
 
