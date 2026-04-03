@@ -106,7 +106,36 @@ The most effective way to do this is to work in waves. I've experimented with re
 <details>
 <summary>Cactus planting</summary>
 
-Hidden content here
+> Like other plants, cacti can be grown on soil and harvested as usual.
+However, they come in various sizes and have a strange sense of order.
+If you harvest a fully-grown cactus and all neighboring cacti are in sorted order, it will also harvest all neighboring cacti recursively.
+A cactus is considered to be in sorted order if all neighboring cacti to the North and East are fully grown and larger or equal in size and all neighboring cacti to the South and West are fully grown and smaller or equal in size.
+The harvest will only spread if all adjacent cacti are fully grown and in sorted order.
+This means that if a square of grown cacti is sorted by size and you harvest one cactus, it will harvest the entire square.
+A fully grown cactus will appear brown if it is not sorted. Once sorted, it will turn green again.
+You will receive cactus equal to the number of harvested cacti squared. So if you harvest n cacti simultaneously you will receive n^2 `Items.Cactus`.
+The size of a cactus can be measured with `measure()`.
+It is always one of these numbers: 0,1,2,3,4,5,6,7,8,9.
+You can also pass a direction into `measure(direction)` to measure the neighboring tile in that direction of the drone.
+You can swap a cactus with its neighbor in any direction using the `swap()` command.
+`swap(direction)` swaps the object under the drone with the object one tile in the direction of the drone.
+
+In each of these grids, all the cacti are in sorted order and the harvest will spread over the entire field:
+3 4 5    3 3 3    1 2 3    1 5 9
+2 3 4    2 2 2    1 2 3    1 3 8
+1 2 3    1 1 1    1 2 3    1 3 4
+
+In this grid, only the lower left cactus is in sorted order, which is not enough for it to spread:
+1 5 3
+4 9 7
+3 3 2
+
+In short: The cacti has to be sorted, so the largest ones are on the east or north. We cannot insert, so the logical answer for the fastest algorithm is the **improved bubble sort**.
+<img width="1616" height="994" alt="image" src="https://github.com/user-attachments/assets/6d388dce-34e1-4ee8-a604-84356929cb1d" />
+
+I've also submitted my algorithm to the global leaderbord, and it got rank #127. (The best 300 are visible, so there were at least that many people who tired).
+![Cactus_Single_Leaderboard](https://github.com/user-attachments/assets/90337f4e-a84f-439f-afe3-2cb603008ead)
+
 
 </details>
 
