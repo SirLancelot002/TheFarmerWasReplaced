@@ -12,3 +12,22 @@ This is by far the most simple task. By default, this just grows out of the grou
 <img width="1327" height="1039" alt="image" src="https://github.com/user-attachments/assets/4648230a-d7b1-4bc8-8aba-3683b57079bf" />
 
 </details>
+
+<details>
+<summary>Bush planting</summary>
+
+The only difficulty increase compared to the grass is that bushes need to be planted first (and when harvested they give wood). This can be done with the `plant(Entites.Bush)` function. These are honestly almost the same.
+<img width="1359" height="825" alt="image" src="https://github.com/user-attachments/assets/f04a0f0e-be4b-4e0a-bedc-12e66dd12988" />
+
+</details>
+
+<details>
+<summary>Tree planting</summary>
+
+Trees are the first plants the player hes to think about for a second. To quote from the game:
+> **Trees** are a better way to get wood than bushes. They give 5 wood each. Like bushes, they can be planted on grass or soil.
+
+> Trees like to have some space and planting them right next to each other will slow down their growth. The growing time is doubled for each tree that is on a tile directly to the north, east, west or south of it. So if you plant trees on every tile, they will take 2*2*2*2 = 16 times longer to grow.
+This means that you want to plant them in a checker board formation to maximalize growth time. (You will need it this time).
+
+</details>
