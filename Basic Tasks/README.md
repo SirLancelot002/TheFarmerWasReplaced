@@ -76,13 +76,30 @@ If there is no plant under the drone that has a companion preference `get_compan
 Before polyculture is unlocked, the yield multiplier is 5. It doubles everytime you upgrade it.
 
 I'd add to the dev's description that a plant cannot have a companion that is the same type as it is. Otherwise, I can't add anything smart to this. I made it random what the drone plants at the spot, then goes through the whole map; if the plant has its companion, it is harvested; otherwise, it gets its companion. *In case you are wondering: No, if **plant X** wants **plant Y** as its companion, that does not mean that **Plant Y** wants **Plant X** as its companion.*
+<img width="1097" height="701" alt="image" src="https://github.com/user-attachments/assets/c6d8c967-819b-4e70-b20c-9ddc9876f1d8" />
 
 </details>
 
 <details>
 <summary>Sunflower planting</summary>
 
-Hidden content here
+> Sunflowers collect the power of the sun. You can harvest that power. 
+Planting them works exactly like planting carrots or pumpkins. 
+Harvesting a grown sunflower yields power.
+If there are at least 10 sunflowers on the farm and you harvest the one with the largest number of petals you get 8 times more power!
+If you harvest a sunflower while there is another sunflower with more petals, the next sunflower you harvest will also only give you the normal amount of power (not the 8x bonus).
+`measure()` returns the number of petals of the sunflower under the drone.
+Sunflowers have at least 7 and at most 15 petals.
+They can already be measured before they are fully grown.
+Several sunflowers can have the same number of petals so there can also be several sunflowers with the largest number of petals. In this case, it doesn't matter which one of them you harvest.
+As long as you have power the drone will use it to run twice as fast. 
+It consumes 1 power every 30 actions (like moves, harvests, plants...)
+Executing other code statements can also use power but a lot less than drone actions.
+In general, everything that is sped up by speed upgrades is also sped up by power.
+Anything sped up by power also uses power proportional to the time it takes to execute it, ignoring speed upgrades.
+
+The most effective way to do this is to work in waves. I've experimented with replanting the harvested flowers straightaway, but that took more time because I had to wait for them to grow again if the new flower had the most petals. Instead, I `measure()` the whole field, put everything in a dictionary, where the key is the number of petals, and the value is a list of coordinates where those sunflowers were found. Then it works its way backward and collects them. Replant, and do again.
+<img width="1164" height="746" alt="image" src="https://github.com/user-attachments/assets/3f64ba5e-df82-4ff3-8b1f-72430c0ed1a2" />
 
 </details>
 
